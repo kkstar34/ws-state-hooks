@@ -1,25 +1,60 @@
-import logo from './logo.svg';
+// import { Component} from "react";
+import { useState } from 'react';
 import './App.css';
 
+
+// class App extends Component {
+
+//   state = {
+//     on : false,
+//   }
+
+//   handleChangeColor = () => {
+//     this.setState({
+//       on : !this.state.on,
+//     })
+//   }
+
+ 
+
+//   render() {
+//     return (
+//       <div className="container">
+//           <div className={this.state.on ? "light on" : "light"}></div>
+//           <button onClick={this.handleChangeColor}>
+//             change color
+//           </button>
+//       </div>
+//     )
+//   }
+
+
+// }
+
+// export default App;
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//  let tab = useState(false);
+//  const on = tab[0];
+//  const setOn = tab[1];
+
+
+let [on, setOn] = useState(false);
+  const handleChangeColor = () => {
+    setOn(!on)
+  }
+
+  return  (
+      <div className="container">
+        <div className={on ? "light on" : "light"}></div>
+          <button onClick={handleChangeColor}>
+            change color
+          </button>
+       </div>
+       )
 }
+
 
 export default App;
